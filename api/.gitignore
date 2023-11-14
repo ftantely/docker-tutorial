@@ -1,1 +1,5 @@
 node_modules
+.idea/.gitignore
+.idea/docker-crash-course-lesson-5.iml
+.idea/modules.xml
+.idea/vcs.xml
