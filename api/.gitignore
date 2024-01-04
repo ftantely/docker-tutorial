@@ -3,3 +3,4 @@ node_modules
 .idea/docker-crash-course-lesson-5.iml
 .idea/modules.xml
 .idea/vcs.xml
+.idea*
