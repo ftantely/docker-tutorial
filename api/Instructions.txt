@@ -31,3 +31,27 @@ docker start myapp_c2
  ---> Any time you make a change to your app, you need to build a new image
 docker build -t myapp3 .
 - all the layers below the changed layer will be rerun
+
+4_Managing_Image_Containers
+---> How to check running containers?
+docker ps
+---> How to check all containers?
+docker ps -a
+---> How to delete a container?
+docker container rm myapp_c2
+---> How to delete unused images
+docker image rm myapp3
+---> How to delete in use image
+docker image rm myapp -f
+
+---> You can't delete an image app if it still has different versions(tags) like myapp:latest
+
+---> How to delete all images and containers all at once?
+docker system prune -a
+
+---> How to create an image with a version?
+docker build -t myapp:v1 .
+*Where v1 is a version of the image
+---> How to create a container from a specific image version?
+docker run --name myapp_c -p 5023:5000 -d myapp:v1
+
