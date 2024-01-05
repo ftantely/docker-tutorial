@@ -27,3 +27,7 @@ docker run --name myapp_c2 -p 5023:5000 -d myapp
 ---> How to start an existing container?
 docker start myapp_c2
 
+ 3_Layer_Caching
+ ---> Any time you make a change to your app, you need to build a new image
+docker build -t myapp3 .
+- all the layers below the changed layer will be rerun
