@@ -12,7 +12,7 @@ COPY . .
 # Path to whereever your app or index is
 RUN npm install
 #install all the dependancy in the package json file
-EXPOSE 4000
+EXPOSE 5000
 #Tells docker whick PORT the container should expose
 # required for docker desktop port mapping
 

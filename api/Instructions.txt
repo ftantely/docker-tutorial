@@ -1,3 +1,29 @@
 00) main branch
 Build an image:
 docker build -t myapp .
+
+2_Start_Stop_Container
+---> How to see all the images?
+docker images
+---> How to run an image to create a container?
+(http://localhost:5023/ will not be running on the browser)
+docker run --name myapp_c1  myapp
+* Where myapp_c1 is the name of the container and myapp is the image
+---> How to stop a container
+* Open a new terminal to check which container is running:
+docker ps
+*Stop container
+docker stop myapp_c1
+---> How to run the container(http://localhost:5023 will be running on the browser)
+docker run --name myapp_c2 -p 5023:5000 -d myapp
+* Where:
+ - myapp_c2 is the new container
+ - -p 5023:5000: This option is used to map ports between the Docker container and
+ the host system. It is specifying that port 5023 on the host should be mapped to port 5000
+ in the Docker container. The format is -p host_port:container_port.
+  - -d: This option runs the Docker container in detached mode. It means the container will run in the background,
+  and you will get the terminal prompt back (It's not blocking the terminal).
+  - myapp: This is the name of the Docker image used to create the container. It specifies which image should be used as the base for the container.
+---> How to start an existing container?
+docker start myapp_c2
+
