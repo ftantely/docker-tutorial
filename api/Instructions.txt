@@ -24,6 +24,7 @@ docker run --name myapp_c2 -p 5023:5000 -d myapp
   - -d: This option runs the Docker container in detached mode. It means the container will run in the background,
   and you will get the terminal prompt back (It's not blocking the terminal).
   - myapp: This is the name of the Docker image used to create the container. It specifies which image should be used as the base for the container.
+
 ---> How to start an existing container?
 docker start myapp_c2
 
@@ -54,4 +55,27 @@ docker build -t myapp:v1 .
 *Where v1 is a version of the image
 ---> How to create a container from a specific image version?
 docker run --name myapp_c -p 5023:5000 -d myapp:v1
+
+5_Volumes
+*Update package.json
+"dev": "nodemon -L app.js"
+*Update docker file with:
+ RUN npm install -g nodemon
+ CMD ["npm", "run", "dev"]
+
+docker run --name myapp_c_nodemon -p 5023:5000 --rm myapp:nodemon
+*Where ""--rm" is removing/deleting the container when we stop it later on
+
+---> How to set the volume up?
+docker run --name myapp_c_nodemon -p 5023:5000 --rm -v /Volumes/TantelyHD/Projects/docker-tutorial/api:/app -v /app/node_modules myapp:nodemon
+*where:
+- "v /Volumes/TantelyHD/Projects/docker-tutorial/api:" is the path to the local project
+we want to map in the container itself
+- "app" is the container that maps the local project folder
+- "-v /app/node_modules" specifies the location of the node_modules folder inside the container itself.
+The node_modules in the container doesn't map the file in the local folder, it's mapped to a folder managed by docker
+This is the necessary in case the node_modules in the local file gets deleted
+
+
+
 

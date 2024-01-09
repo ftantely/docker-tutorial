@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
   res.json([
     {
       "id":"1",
-      "title":"Book Review: The Bear & The Nightingale, bla bla"
+      "title":"Book Review: The Bear & The Nightingale, ABC"
     },
     {
       "id":"2",
@@ -23,5 +23,5 @@ app.get('/', (req, res) => {
 })
 
 app.listen(5000, () => {
-  console.log('listening for requests on port 5000')
+  console.log('listening for requests on port 5023....')
 })

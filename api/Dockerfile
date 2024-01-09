@@ -1,5 +1,7 @@
 FROM node:17-alpine
 
+RUN npm install -g nodemon
+
 WORKDIR /app
 # Work directory of the image
 
@@ -16,5 +18,5 @@ EXPOSE 5000
 #Tells docker whick PORT the container should expose
 # required for docker desktop port mapping
 
-CMD ["node", "app.js"]
+CMD ["npm", "run", "dev"]
 # This is the commande to run the applications "node" and "app.js" in the container
