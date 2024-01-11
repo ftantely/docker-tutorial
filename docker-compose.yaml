@@ -1,0 +1,13 @@
+version: "v2.23.3-desktop.2"
+services:
+  api:
+    build: ./api
+    container_name: api_c
+    ports:
+      - '5023:5000'
+    volumes:
+      - ./api:/app
+
+
+
+

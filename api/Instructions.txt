@@ -76,6 +76,15 @@ we want to map in the container itself
 The node_modules in the container doesn't map the file in the local folder, it's mapped to a folder managed by docker
 This is the necessary in case the node_modules in the local file gets deleted
 
+6_Docker_Compose
+---> How to build images and container
+docker compose up
+---> How to stop and delete containers?
+docker compose down
+---> How to delete all images and volumes?
+docker compose down --rmi all -v
+
+
 
 
 
