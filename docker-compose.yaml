@@ -8,6 +8,11 @@ services:
     volumes:
       - ./api:/app
 
-
+  myblog:
+    build: ./myblog
+    container_name: myblog_c
+    ports:
+      - '3013:3000'
+    stdin_open: true
 
 
