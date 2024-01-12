@@ -84,6 +84,18 @@ docker compose down
 ---> How to delete all images and volumes?
 docker compose down --rmi all -v
 
+8_Images_Docker_Hub
+---> Create a repo on dockerhub
+ftantely/myapi
+---> cd to the parent directory of DockerFile
+docker build -t ftantely/myapi .
+---> Push images to dockerhub
+docker push ftantely/myapi
+---> Pull the image from Dockerhub to the local computer
+- Delete image from local machine
+docker image rm ftantely/myapi
+- Pull the images from repo to the computer
+docker pull ftantely/myapi:latest
 
 
 
